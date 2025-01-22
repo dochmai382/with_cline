@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- og -->
+    <meta
+      property="og:image"
+      content="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Maneskin_at_the_MTV_VMA_2023_09_12_2023_%28cropped%29.jpg/1280px-Maneskin_at_the_MTV_VMA_2023_09_12_2023_%28cropped%29.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Måneskin is an Italian rock band formed in Rome in 2016. "
+    />
+    <title>Måneskin - Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="favicon/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+    <link rel="shortcut icon" href="favicon/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-family: "RocknRoll One", serif;
+        font-weight: 400;
+        font-style: normal;
+        background-color: #f8f9fa;
+      }
+
+      .jumbotron {
+        background-color: #6c757d;
+        color: #fff;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .jumbotron img {
+        /* background: transparent; */
+        max-width: 150px;
+        margin-right: 1rem;
+      }
+      .card {
+        margin-bottom: 1rem;
+      }
+
+      .card img {
+        max-height: 300px;
+      }
+      .carousel-item img {
+        max-height: 400px;
+        /* object-fit: cover; */
+        object-fit: contain;
+      }
+      .accordion-button {
+        background-color: #6c757d;
+        color: #fff;
+      }
+      .accordion-button:not(.collapsed) {
+        background-color: #495057;
+        color: #fff;
+      }
+      footer {
+        background-color: #343a40;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+      }
+      .modal-content {
+        background-color: #6c757d;
+        color: #fff;
+      }
+      .modal-header {
+        border-bottom: 1px solid #fff;
+      }
+      .modal-footer {
+        border-top: 1px solid #fff;
+      }
+      .toast {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        z-index: 1000;
+      }
+      .spinner-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .card {
+        margin: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="spinner-container" id="spinner">
+      <div class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Måneskin</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#members">Members</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#discography">Discography</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <img src="images/maneskin_logo.png" alt="Måneskin Logo" />
+      <div>
+        <h1 class="display-4">Måneskin</h1>
+        <p class="lead">An Italian rock band that took the world by storm.</p>
+      </div>
+    </div>
+
+    <div class="container" id="about">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>About Måneskin</h2>
+          <p>
+            Måneskin is an Italian rock band formed in Rome in 2016. The band is
+            composed of vocalist Damiano David, bassist Victoria De Angelis,
+            guitarist Thomas Raggi, and drummer Ethan Torchio. Performing in the
+            streets in their early days, they rose to prominence after finishing
+            second in the eleventh season of the Italian talent show X Factor in
+            2017. Their international breakthrough came when the foursome won
+            the Eurovision Song Contest 2021 for Italy with the song "Zitti e
+            buoni".
+          </p>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#aboutModal"
+          >
+            Read More
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="aboutModal"
+      tabindex="-1"
+      aria-labelledby="aboutModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="aboutModalLabel">About Måneskin</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Måneskin's compelling blend of rock, alternative, and glam rock
+              elements has captivated audiences worldwide. Their music often
+              explores themes of rebellion, love, and societal issues, delivered
+              with raw energy and passion.
+            </p>
+            <p>
+              The band's name, "Måneskin," is Danish for "moonlight," a tribute
+              to bassist Victoria De Angelis's Danish heritage. It symbolizes
+              the band's eclectic and somewhat mysterious musical style.
+            </p>
+            <p>
+              Since their Eurovision victory, Måneskin has continued to release
+              chart-topping hits and perform sold-out shows globally,
+              solidifying their status as one of the most exciting acts in
+              contemporary rock music.
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5" id="members">
+      <h2>Meet the Members</h2>
+      <div class="row card-container">
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="images/damiano.jpg"
+              class="card-img-top"
+              alt="Damiano David"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Damiano David</h5>
+              <p class="card-text">Vocals</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="images/victoria.jpg"
+              class="card-img-top"
+              alt="Victoria De Angelis"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Victoria De Angelis</h5>
+              <p class="card-text">Bass</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="images/thomas.jpg"
+              class="card-img-top"
+              alt="Thomas Raggi"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Thomas Raggi</h5>
+              <p class="card-text">Guitar</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card">
+            <img
+              src="images/ethan.jpg"
+              class="card-img-top"
+              alt="Ethan Torchio"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Ethan Torchio</h5>
+              <p class="card-text">Drums</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5">
+      <h2>Image Gallery</h2>
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="images/maneskin_1.jpg"
+              class="d-block w-100"
+              alt="Måneskin at the MTV VMA 2023"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/maneskin_2.jpg"
+              class="d-block w-100"
+              alt="Måneskin at Rock am Ring 2022"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="images/maneskin_3.jpg"
+              class="d-block w-100"
+              alt="Måneskin at Rock am Ring 2022"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="container mt-5" id="discography">
+      <h2>Discography</h2>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Il ballo della vita (2018)
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>New Song</li>
+                <li>Sh*t Blvd</li>
+                <li>Immortale</li>
+                <li>Le parole lontane</li>
+                <li>Chosen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Teatro d'ira: Vol. I (2021)
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>Zitti e buoni</li>
+                <li>Coraline</li>
+                <li>Lividi sui gomiti</li>
+                <li>I Wanna Be Your Slave</li>
+                <li>In nome del padre</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Rush! (2023)
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <ul>
+                <li>Own My Mind</li>
+                <li>Gossip</li>
+                <li>Timezone</li>
+                <li>Bla Bla Bla</li>
+                <li>Baby Said</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="toast align-items-center text-white bg-primary border-0"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      id="liveToast"
+    >
+      <div class="d-flex">
+        <div class="toast-body">
+          Welcome to the Måneskin Fansite! Click 'Read More' to learn about the
+          band.
+        </div>
+        <button
+          type="button"
+          class="btn-close btn-close-white me-2 m-auto"
+          data-bs-dismiss="toast"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+
+    <footer class="mt-5">
+      <p>&copy; 2024 Måneskin Fansite</p>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener("load", () => {
+        const spinner = document.getElementById("spinner");
+        spinner.style.display = "none";
+
+        const toastElList = [].slice.call(document.querySelectorAll(".toast"));
+        const toastList = toastElList.map(function (toastEl) {
+          return new bootstrap.Toast(toastEl);
+        });
+        toastList.forEach((toast) => toast.show());
+      });
+    </script>
+  </body>
+</html>
